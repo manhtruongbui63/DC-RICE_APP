@@ -17,8 +17,8 @@ module.exports = defineConfig({
   pages: {
     index: {
       entry: 'src/main.js',
-      title: 'DC Rice'
-      // favicon: 'public/logo-dgame.ico'
+      title: 'DC Rice',
+      favicon: 'public/logo.ico'
     }
   }
 })

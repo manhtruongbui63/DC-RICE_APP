@@ -5,8 +5,15 @@
 <script>
 export default {
   name: 'App',
-  data: () => ({
-    //
-  })
+  data: () => ({}),
+  created() {
+    const currentUser = () => {
+      const token = localStorage.getItem('access-token')
+      if (!token) return
+      this.$store.dispatch('auth/getUser')
+    }
+    currentUser()
+  },
+  methods: {}
 }
 </script>

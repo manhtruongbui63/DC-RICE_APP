@@ -1,7 +1,7 @@
 <template>
-  <v-footer>
+  <v-footer class="px-0">
     <v-container>
-      <v-footer padless>
+      <v-footer padless class="pb-md-0" style="padding-bottom: 64px">
         <v-card flat class="text-center">
           <v-card-text>
             <!-- <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
