@@ -1,9 +1,9 @@
 <template>
-  <v-app>
+  <v-app class="app-custom">
     <v-system-bar app color="success" height="32">
       <v-container class="d-flex">
         <v-spacer></v-spacer>
-        <ul class="d-flex">
+        <ul class="d-flex white--text">
           <li class="mx-2">
             <span>Hệ thống cửa hàng</span>
           </li>
@@ -11,36 +11,34 @@
       </v-container>
     </v-system-bar>
     <AppBar />
-    <router-view />
+    <v-main>
+      <router-view />
+    </v-main>
     <Footer />
-    <v-app-bar
-      class="hidden-md-and-up"
-      :fixed="true"
-      bottom
-      height="64"
-      color="white"
-    >
-      <v-container>
-        <v-toolbar flat>
-          <v-row align="center" justify="space-around">
-            <v-icon color="#41AB55">fas fa-house</v-icon>
-            <v-icon>fab fa-microsoft</v-icon>
-            <v-icon>fas fa-lock</v-icon>
-            <v-icon>fas fa-bell</v-icon>
-            <v-icon>fas fa-user</v-icon>
-          </v-row>
-        </v-toolbar>
-      </v-container>
-    </v-app-bar>
+    <MobileNav />
+    <v-overlay :value="isLoading"
+      ><v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </v-app>
 </template>
 
 <script>
 import AppBar from './PublicHeader.vue'
 import Footer from './PublicFooter.vue'
+import MobileNav from '@/components/MobileNav'
 export default {
-  components: { AppBar, Footer },
+  components: { AppBar, Footer, MobileNav },
   data: () => ({}),
+  computed: {
+    isLoading() {
+      return this.$store.getters.isLoading
+    }
+  },
   methods: {}
 }
 </script>
+<style lang="scss">
+.v-main__wrap {
+  background-color: #f5f5f5;
+}
+</style>

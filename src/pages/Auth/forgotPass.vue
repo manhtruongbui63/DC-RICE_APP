@@ -4,7 +4,14 @@
 
 <script>
 export default {
-  name: 'forgot-password'
+  name: 'forgot-password',
+
+  data() {
+    return {
+      //
+      //
+    }
+  }
 }
 </script>
 
