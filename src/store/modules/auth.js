@@ -31,8 +31,8 @@ const mutations = {
     let user = { ...payload }
     user.roles = _.map(user.Roles, 'name')
     user.fullname =
-      payload.first_name.match(/(\b\S)?/g).join('') +
-      payload.last_name.match(/(\b\S)?/g).join('')
+      payload?.first_name?.match(/(\b\S)?/g).join('') +
+      payload?.last_name?.match(/(\b\S)?/g).join('')
     delete user.Roles
     state.user = user
   }
