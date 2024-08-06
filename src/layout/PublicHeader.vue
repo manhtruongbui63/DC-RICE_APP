@@ -221,7 +221,7 @@
         <v-avatar v-if="user" size="30" class="hidden ml-3" color="green">
           <v-img v-if="user?.avatar" :src="user?.avatar" alt="avatar"></v-img>
           <span v-else class="white--text text-uppercase">{{
-            user.fullname
+            user?.fullname ? user.fullname : user?.email?.charAt(0)
           }}</span>
         </v-avatar>
         <v-btn
