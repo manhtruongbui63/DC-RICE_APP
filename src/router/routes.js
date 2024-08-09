@@ -25,7 +25,7 @@ const routes = [
         path: 'register',
         name: 'sign-up',
         meta: {},
-        component: () => import('@/pages/Auth/signUp.vue')
+        component: () => import('@/pages/Auth/SignUp.vue')
       }
     ]
   },
