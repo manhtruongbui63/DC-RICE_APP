@@ -1,9 +1,6 @@
 <template>
-  <v-card class="mx-auto card-style" height="150px" outlined>
-    <v-img class="white--text align-end" :src="post?.src" height="150px">
-      <v-card-title></v-card-title>
-      <v-card-subtitle></v-card-subtitle
-    ></v-img>
+  <v-card class="mx-auto card-style" outlined>
+    <v-img class="white--text align-end" :src="post?.src" max-height="150px" />
   </v-card>
 </template>
 
