@@ -20,5 +20,7 @@ module.exports = defineConfig({
       title: 'DC Rice',
       favicon: 'public/logo.ico'
     }
-  }
+  },
+  // Đặt tên thư mục đầu ra là 'build'
+  outputDir: 'build'
 })

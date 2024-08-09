@@ -33,6 +33,11 @@ instance.interceptors.response.use(
   },
   (error) => {
     store.dispatch('setLoading', false)
+    if (error.response?.status === 404) {
+      router.push({
+        name: 'not-found'
+      })
+    }
     if (error.response?.status === 401) {
       store.dispatch('auth/handleLogout').then(() => {
         router.push({
